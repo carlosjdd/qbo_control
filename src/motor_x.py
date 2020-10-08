@@ -88,7 +88,7 @@ if __name__=='__main__':
 
     """
     try:
-        rospy.init_node('ROSnode_name')       # Init ROS node
+        rospy.init_node('motor_x_node')       # Init ROS node
 
         motors = motor_x_controler()
         rospy.on_shutdown(motors.stopping_node)   #When ROS is closed, this void is executed
