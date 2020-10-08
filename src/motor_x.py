@@ -70,16 +70,13 @@ class motor_x_controler():
         """ROS callback
 
         This void is executed when a message is received"""
-        #try:
-        ang = data.data[0]
-        spe = data.data[1]
-        print (ang)
-        print (spe)
-        ang = ang * (self.real_ang_max-self.real_ang_min) / (self.msg_ang_max - self.msg_ang_min) + ((self.real_ang_max+self.real_ang_min)/2)
-        print (int(ang))
-        self.move_x(int(ang), spe)
-        #except:
-        #    print ("[ERROR]: Wrong data sent in motor_x")
+        try:
+            ang = data.data[0]
+            spe = data.data[1]
+            ang = ang * (self.real_ang_max-self.real_ang_min) / (self.msg_ang_max - self.msg_ang_min) + ((self.real_ang_max+self.real_ang_min)/2)
+            self.move_x(int(ang), spe)
+        except:
+            print ("[ERROR]: Wrong data sent in motor_x")
 
 if __name__=='__main__':
     """ Main void.
