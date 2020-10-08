@@ -41,7 +41,7 @@ class motor_x_controler():
 
         Configure the serial communication with the Qbo PCB.
         Set the serial port, the baudrate and similar things"""
-        port = 'dev/serial0'
+        port = '/dev/serial0'
         ser = serial.Serial(port, baudrate = 115200, bytesize = serial.EIGHTBITS, stopbits = serial.STOPBITS_ONE, parity = serial.PARITY_NONE, rtscts = False, dsrdtr = False, timeout = 0)
         self.QBO = QboCmd.Controller(ser)
 
