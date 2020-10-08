@@ -7,9 +7,9 @@ import serial
 import QboCmd
 
 # import the necessary msgs. Example with msg type String_Int_Arrays:
-from std_msgs.msg import Int16MultiArray
+from std_msgs.msg import UInt8
 
-class motor_x_controler():
+class nose_controler():
     """ Class motor_x_controler.
 
     Info about the class
@@ -22,15 +22,7 @@ class motor_x_controler():
         """
 
         #Subscribe to ROS topics
-        self.sub_x = rospy.Subscriber("motor_x", Int16MultiArray, self.motor_x_cb)
-
-        self.motor_id=1 #Set as motor x
-
-        self.msg_ang_min = -100
-        self.msg_ang_max = 100
-
-        self.real_ang_min = 290
-        self.real_ang_max = 725
+        self.sub_nose = rospy.Subscriber("nose", UInt8, self.nose_cb)
 
         self.serial_configuration()
 
@@ -45,11 +37,11 @@ class motor_x_controler():
         ser = serial.Serial(port, baudrate = 115200, bytesize = serial.EIGHTBITS, stopbits = serial.STOPBITS_ONE, parity = serial.PARITY_NONE, rtscts = False, dsrdtr = False, timeout = 0)
         self.QBO = QboCmd.Controller(ser)
 
-    def move_x(self, angle, speed):
+    def nose(self, color):
         """Void move_x
 
         Void to send the commands to the robot. It is sent the motor ID, the angle to reach and the speed"""
-        self.QBO.SetServo(self.motor_id, angle, speed)
+        self.QBO.SetNoseColor(color)
 
     def run_loop(self):
         """ Infinite loop.
@@ -70,13 +62,20 @@ class motor_x_controler():
         """ROS callback
 
         This void is executed when a message is received"""
+
+        # Qbo colores: 0 y 2 apagado. 1 y 3 azul. 4 y 6 verde. 5 cian
         try:
-            ang = data.data[0]
-            spe = data.data[1]
-            ang = ang * (self.real_ang_max-self.real_ang_min) / (self.msg_ang_max - self.msg_ang_min) + ((self.real_ang_max+self.real_ang_min)/2)
-            self.move_x(int(ang), spe)
+            if data.data == 1:
+                col = 1
+            elif data.data == 2:
+                col = 4
+            elif data.data == 3:
+                col = 5
+            else:
+                col = 0
+            self.nose(col)
         except:
-            print ("[ERROR]: Wrong data sent in motor_x")
+            print ("[ERROR]: Wrong data sent in nose")
 
 if __name__=='__main__':
     """ Main void.
@@ -88,12 +87,12 @@ if __name__=='__main__':
 
     """
     try:
-        rospy.init_node('motor_x_node')       # Init ROS node
+        rospy.init_node('nose_node')       # Init ROS node
 
-        motors = motor_x_controler()
-        rospy.on_shutdown(motors.stopping_node)   #When ROS is closed, this void is executed
+        nose_color = nose_controler()
+        rospy.on_shutdown(nose_color.stopping_node)   #When ROS is closed, this void is executed
 
-        motors.run_loop()
+        nose_color.run_loop()
 
     except rospy.ROSInterruptException:
         pass
