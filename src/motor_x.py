@@ -49,7 +49,7 @@ class motor_x_controler():
         """Void move_x
 
         Void to send the commands to the robot. It is sent the motor ID, the angle to reach and the speed"""
-        QBO.SetServo(self.motor_id, angle, speed)
+        self.QBO.SetServo(self.motor_id, angle, speed)
 
     def run_loop(self):
         """ Infinite loop.
