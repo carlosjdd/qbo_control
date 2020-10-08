@@ -58,7 +58,7 @@ class nose_controler():
         Is the function called when ROS node is closed."""
         print("\n\nBye bye! :)\n\n")
 
-    def motor_x_cb(self, data):
+    def nose_cb(self, data):
         """ROS callback
 
         This void is executed when a message is received"""
