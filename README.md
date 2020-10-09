@@ -60,4 +60,4 @@ Once everything is working, to control Qbo you can send msgs to each topic. The 
 
 - `/set_mouth` is the topic to set any expression on the mouth.
 
-To know how every topic work, you must have a look at the file "nodes.xlsx"
+To know how every topic work, you must have a look at the file ``nodes.xlsx``
