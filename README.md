@@ -13,7 +13,7 @@ After that, I create a new workspace, added the sources to .bashrc and also expo
 
 Once installed ROS in Qbo, just clone this package into your workspace and compile. In the folder "src", you can find all the nodes made to control the movement of the x and y motors of the head, the led for the nose and the matrix for the mouth. Appart from that, the script QboCmd.py is the library imported in the rest of nodes and used to control the serial communication with the actuators. You can test the different nodes found in src by running them:
 
-
+```bash
 rosrun qbo_control motor_x.py
 
 rosrun qbo_control motor_y.py
@@ -21,7 +21,7 @@ rosrun qbo_control motor_y.py
 rosrun qbo_control nose.py
 
 rosrun qbo_control mouth.py
-
+```
 
 Other option to run all the scripts is simply launching the qbo_control launcher as follows:
 
@@ -59,4 +59,4 @@ Once everything is working, to control Qbo you can send msgs to each topic. The 
 
 - `/set_mouth` is the topic to set any expression on the mouth.
 
-To know how every topic works and know what they expect, you must have a look at the file "nodes.xlsx"
+To know how every topic work, you must have a look at the file "nodes.xlsx"
