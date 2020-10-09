@@ -49,14 +49,14 @@ Note that with roscd you should have been located in your workspace, in which qb
 
 Once everything is working, to control Qbo you can send msgs to each topic. The topics are:
 
-`/motor_x` is the topic to set the angular position between -100 and 100 and the speed to move the x motor
+- `/motor_x` is the topic to set the angular position between -100 and 100 and the speed to move the x motor
 
-`/motor_y` is the topic to set the angular position between -100 and 100 and the speed to move the y motor
+- `/motor_y` is the topic to set the angular position between -100 and 100 and the speed to move the y motor
 
-`/nose` is the topic to set the color of the nose
+- `/nose` is the topic to set the color of the nose
 
-`/set_expression` is the topic to set some defined expressions for the mouth
+- `/set_expression` is the topic to set some defined expressions for the mouth
 
-`/set_mouth` is the topic to set any expression on the mouth.
+- `/set_mouth` is the topic to set any expression on the mouth.
 
 To know how every topic works and know what they expect, you must have a look at the file "nodes.xlsx"
