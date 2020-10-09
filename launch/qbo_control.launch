@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<launch>
+	<node pkg="qbo_control" name="motor_x" type="motor_x.py" />
+	<node pkg="qbo_control" name="motor_y" type="motor_y.py" />
+	<node pkg="qbo_control" name="nose" type="nose.py" />
+	<node pkg="qbo_control" name="mouth" type="mouth.py" />
+</launch>
