@@ -10,6 +10,7 @@ import QboCmd
 from std_msgs.msg import UInt64
 from std_msgs.msg import UInt8
 
+# Declare constants with the leds matrix for every expression. Values are in hexadecimal
 OFF = 0                     # 0 in msg
 HAPPY = 0x110E00            # 1 in msg
 SAD = 0x0E1100              # 2 in msg
@@ -25,18 +26,22 @@ INDIFERENCE_1 = 0x1F000000  # 11 in msg
 INDIFERENCE_2 = 0xFF        # 12 in msg
 WHAT = 0x3030000            # 13 in msg
 
+# Include the expression constants in the constant Array EXPRESSIONS
 EXPRESSIONS = [OFF, HAPPY, SAD, SERIOUS, LOVE, TONGUE_OUT, DISGUST, SURPRISE_1, SURPRISE_2, FEAR, HOLD_LAUGH, INDIFERENCE_1, INDIFERENCE_2, WHAT]
 
 class mouth_controler():
     """ Class mouth_controler.
 
-    Info about the class
+    Bridge class to control with ROS the mouth of the robot
     """
 
     def __init__(self):
         """Class constructor
 
         It is the constructor of the class. It does:
+            - Subscribe to /set_mouth topic
+            - Subscribe to /set_expression topic
+            - Call serial_configuration
         """
 
         #Subscribe to ROS topics
@@ -57,7 +62,7 @@ class mouth_controler():
         self.QBO = QboCmd.Controller(ser)
 
     def mouth(self, matrix):
-        """Void move_x
+        """Void mouth
 
         Void to send the commands to the robot. It is sent the value of the LED matrix"""
         self.QBO.SetMouth(matrix)

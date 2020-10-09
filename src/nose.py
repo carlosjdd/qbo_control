@@ -10,15 +10,17 @@ import QboCmd
 from std_msgs.msg import UInt8
 
 class nose_controler():
-    """ Class motor_x_controler.
+    """ Class nose_controler.
 
-    Info about the class
+    Bridge class to control with ROS the nose of the robot.
     """
 
     def __init__(self):
         """Class constructor
 
         It is the constructor of the class. It does:
+            - Subscribe to /nose topic
+            - Call serial_configuration
         """
 
         #Subscribe to ROS topics
@@ -38,9 +40,9 @@ class nose_controler():
         self.QBO = QboCmd.Controller(ser)
 
     def nose(self, color):
-        """Void move_x
+        """Void nose
 
-        Void to send the commands to the robot. It is sent the motor ID, the angle to reach and the speed"""
+        Void to send the commands to the robot. It is sent the color to switch on the nose led"""
         self.QBO.SetNoseColor(color)
 
     def run_loop(self):
@@ -63,7 +65,8 @@ class nose_controler():
 
         This void is executed when a message is received"""
 
-        # Qbo colores: 0 y 2 apagado. 1 y 3 azul. 4 y 6 verde. 5 cian
+        # msg colors: 0 switched off. 1 blue. 2 green. 3 cyan
+        # Qbo colors: 0 & 2 switched off. 1 & 3 blue. 4 & 6 green. 5 cyan
         try:
             if data.data == 1:
                 col = 1

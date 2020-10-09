@@ -12,13 +12,17 @@ from std_msgs.msg import Int16MultiArray
 class motor_x_controler():
     """ Class motor_x_controler.
 
-    Info about the class
+    Bridge class to control with ROS the x motor of the robot
     """
 
     def __init__(self):
         """Class constructor
 
         It is the constructor of the class. It does:
+            - Subscribe to /motor_x topic
+            - Set the ID of the x motor as 1
+            - Set the minimum and maximum values for the msg
+            - Set the minimum and maximum values for the motor
         """
 
         #Subscribe to ROS topics
@@ -26,9 +30,11 @@ class motor_x_controler():
 
         self.motor_id=1 #Set as motor x
 
+        #angular msg limits
         self.msg_ang_min = -100
         self.msg_ang_max = 100
 
+        #angular motor limits
         self.real_ang_min = 290
         self.real_ang_max = 725
 
@@ -70,9 +76,17 @@ class motor_x_controler():
         """ROS callback
 
         This void is executed when a message is received"""
+
+        # Set the angular value if it is out of the limits
+        if data.data[0] < self.msg_ang_min:
+            data.data[0] = self.msg_ang_min
+        elif data.data[0] > self.msg_ang_max:
+            data.data[0] = self.msg_ang_max
+
         try:
             ang = data.data[0]
             spe = data.data[1]
+            # Scale the angular value from the msg limits to the real limits
             ang = ang * (self.real_ang_max-self.real_ang_min) / (self.msg_ang_max - self.msg_ang_min) + ((self.real_ang_max+self.real_ang_min)/2)
             self.move_x(int(ang), spe)
         except:
