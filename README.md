@@ -4,8 +4,9 @@
 
 To control Qbo with ROS, the first step needed is installing ROS in the microSD of Qbo's Raspberry. To do that, you can follow the steps given to install ROS in its wiki. In my case, I installed ROS Melodic in Raspbian following this instructions:
 
+```bash
 "PONER ENLACE A LA WIKI DE ROS PARA INSTALAR ROS MELODIC EN RASPBIAN"
-
+```
 
 After that, I create a new workspace, added the sources to .bashrc and also exported my ROS_WORKSPACE.
 
@@ -25,13 +26,13 @@ rosrun qbo_control mouth.py
 
 Other option to run all the scripts is simply launching the qbo_control launcher as follows:
 
-
+```bash
 roslaunch qbo_control qbo_control.launch
-
+```
 
 However, I have not tested the launcher because in my Qbo raspberry I have an error when I try to locate any package. Because of that I cannot use the rosrun or the roslaunch functions. I don't know if I am the only one facing this problem because of the ROS installation, but if you have the same problem, you can run the scripts using python, and everything works alright. To do that, yo can use the next commands:
 
-
+```bash
 roscd
 
 python src/qbo_control/src/motor_x.py
@@ -41,7 +42,7 @@ python src/qbo_control/src/motor_y.py
 python src/qbo_control/src/nose.py
 
 python src/qbo_control/src/mouth.py
-
+```
 
 Note that with roscd you should have been located in your workspace, in which qbo_control has been cloned and compiled.
 
