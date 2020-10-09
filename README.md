@@ -1,4 +1,4 @@
-# qbo_control
+# QBO_CONTROL
 
 ## Install ROS
 
