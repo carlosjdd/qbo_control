@@ -65,5 +65,11 @@ To know how every topic work, you must have a look in the folder ``docs``. There
  ### node motor_x:
  <a href="url"><img src="docs/node motor_x.png" align="center"></a>
  
- ## node motor_y:
+ ### node motor_y:
   <a href="url"><img src="docs/node motor_y.png" align="center"></a>
+  
+ ### node nose:
+  <a href="url"><img src="docs/node nose.png" align="center"></a>
+  
+ ### node mouth:
+  <a href="url"><img src="docs/node mouth.png" align="center"></a>
