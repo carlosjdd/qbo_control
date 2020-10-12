@@ -61,9 +61,9 @@ Once everything is working, to control Qbo you can send msgs to each topic. The 
 - `/set_mouth` is the topic to set any expression on the mouth.
 
 To know how every topic work, you must have a look in the folder ``docs``. There, the full documentation is in the file ``nodes and topics.xlsx`` but you can also find the next images for every node and topic:
-
- ![Alt text]("docs/node motor_x.png" "motor_x node") 
  
- ![stack Overflow](docs/node motor_x.png) 
- 
+ ### node motor_x:
  <a href="url"><img src="docs/node motor_x.png" align="center"></a>
+ 
+ ## node motor_y:
+  <a href="url"><img src="docs/node motor_y.png" align="center"></a>
