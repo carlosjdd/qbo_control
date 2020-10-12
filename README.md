@@ -64,6 +64,6 @@ To know how every topic work, you must have a look in the folder ``docs``. There
 
  ![Alt text]("docs/node motor_x.png" "motor_x node") 
  
- ![stack Overflow](http://lmsotfy.com/so.png) 
+ ![stack Overflow](docs/node motor_x.png) 
  
  <a href="url"><img src="docs/node motor_x.png" align="center"></a>
