@@ -7,7 +7,7 @@ This package allows to integrate ROS in the robot Qbo. It will allow to control 
 To control Qbo with ROS, the first step needed is installing ROS in the microSD of Qbo's Raspberry. To do that, you can follow the steps given to install ROS in its wiki. In my case, I installed ROS Melodic in Raspbian following this instructions:
 
 ```bash
-"PONER ENLACE A LA WIKI DE ROS PARA INSTALAR ROS MELODIC EN RASPBIAN"
+http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Melodic%20on%20the%20Raspberry%20Pi
 ```
 
 After that, I create a new workspace, added the sources to .bashrc and also exported my ROS_WORKSPACE.
