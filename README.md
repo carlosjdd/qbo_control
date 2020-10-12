@@ -8,7 +8,7 @@ To control Qbo with ROS, the first step needed is installing ROS in the microSD 
 
 http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Melodic%20on%20the%20Raspberry%20Pi
 
-After that, I create a new workspace, added the sources to .bashrc and also exported my ROS_WORKSPACE.
+After that, I created a new workspace, added the sources to .bashrc and also exported my ROS_WORKSPACE.
 
 ## Launch nodes
 
