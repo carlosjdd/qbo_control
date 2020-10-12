@@ -62,6 +62,6 @@ Once everything is working, to control Qbo you can send msgs to each topic. The 
 
 To know how every topic work, you must have a look in the folder ``docs``. There, the full documentation is in the file ``nodes and topics.xlsx`` but you can also find the next images for every node and topic:
 
- ![Alt text](docs/node motor_x.png?raw=true "motor_x node") 
+ ![Alt text]("docs/node motor_x.png" "motor_x node") 
  
  <a href="url"><img src="docs/node motor_x.png" align="center"></a>
