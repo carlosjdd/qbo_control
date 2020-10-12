@@ -1,5 +1,7 @@
 # QBO_CONTROL
-This package allows to integrate ROS in the robot Qbo. It will control the movement of the head motors (x and y), the led for the nose and the led matrix for the mouth.
+This package allows to integrate ROS in the robot Qbo. To discuss any issue, please use their official forum: http://thecorpora.com/community/ros-robot-operating-system/
+
+With this ROS package it will be posible to control the movement of the head motors (x and y), the led for the nose and the led matrix for the mouth.
 
 
 ## Install ROS
