@@ -64,4 +64,4 @@ To know how every topic work, you must have a look in the folder ``docs``. There
 
  ![Alt text](docs/node motor_x.png?raw=true "motor_x node") 
  
- <a href="url"><img src="https://www.roscomponents.com/1213-medium_default_2x/summit-xl.jpg" align="left" height="275" ></a>
+ <a href="url"><img src="docs/node motor_x.png" align="left" height="275" ></a>
