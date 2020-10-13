@@ -12,9 +12,20 @@ http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Melodic%20on%20the%20Raspberry
 
 After that, I created a new workspace, added the sources to .bashrc and also exported my ROS_WORKSPACE.
 
+## Clone repository and compile
+
+Once installed ROS in Qbo, just clone this package into your workspace and compile.
+```bash
+roscd
+cd src
+git clone https://github.com/carlosjdd/qbo_control.git
+roscd
+catkin_make
+```
+
 ## Launch nodes
 
-Once installed ROS in Qbo, just clone this package into your workspace and compile. In the folder "src", you can find all the nodes made to control the movement of the x and y motors of the head, the led for the nose and the matrix for the mouth. Appart from that, the script QboCmd.py is the library imported in the rest of nodes and used to control the serial communication with the actuators. You can test the different nodes found in src by running them:
+Inside the ROS package, in the folder "src", you can find all the nodes made to control the movement of the x and y motors of the head, the led for the nose and the matrix for the mouth. Appart from that, the script QboCmd.py is the library imported in the rest of nodes and used to control the serial communication with the actuators. You can test the different nodes found in src by running them:
 
 ```bash
 rosrun qbo_control motor_x.py
