@@ -26,7 +26,7 @@ To export your new ROS_WORKSPACE, you can execute the next command to add it to 
 echo "export ROS_WORKSPACE=/home/pi/catkin_ws" >> ~/.bashrc
 ```
 
-Finally, source the .bashrc file with the third command.
+Finally, source the .bashrc file with the next command.
 ```bash
 source .bashrc
 ```
