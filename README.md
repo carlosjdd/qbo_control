@@ -16,9 +16,10 @@ mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/
 catkin_make
 ```
-To export your new ROS_WORKSPACE, you can execute the next command to add it to your .bashrc file
+To export your new ROS_WORKSPACE, you can execute the first next command to add it to your .bashrc file and then source the .bashrc file with the second command.
 ```bash
 echo "export ROS_WORKSPACE=/home/pi/catkin_ws" >> ~/.bashrc
+source .bashrc
 ```
 
 ## Clone repository and compile
