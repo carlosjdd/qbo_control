@@ -16,14 +16,18 @@ mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/
 catkin_make
 ```
-To source your new workspace, you can execute the first next command to add it to your .bashrc file.
+To source your new workspace, you can execute the next command to add it to your .bashrc file:
+```bash
+echo "source /home/pi/catkin_ws/devel/setup.bash" >> ~/.bashrc
+```
 
-To export your new ROS_WORKSPACE, you can execute the second next command to add it to your .bashrc file.
+To export your new ROS_WORKSPACE, you can execute the next command to add it to your .bashrc file:
+```bash
+echo "export ROS_WORKSPACE=/home/pi/catkin_ws" >> ~/.bashrc
+```
 
 Finally, source the .bashrc file with the third command.
 ```bash
-echo "source /home/pi/catkin_ws/devel/setup.bash" >> ~/.bashrc
-echo "export ROS_WORKSPACE=/home/pi/catkin_ws" >> ~/.bashrc
 source .bashrc
 ```
 
