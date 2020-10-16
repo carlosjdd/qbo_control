@@ -12,7 +12,7 @@ http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry
 
 I also tried to install ROS Melodic, but although it worked, I had some odd errors when searching packages. When I installed ROS Kinetic everything worked. I don't know if the problem is the version of ROS, or different. But just in case, I wanted to inform.
 
-After that, I created a new workspace, added the sources to .bashrc and also exported my ROS_WORKSPACE.
+After that, I created a new workspace, added the sources to .bashrc and also exported my ROS_WORKSPACE. To create a new workspace named "catkin_ws", you must execute this commands:
 ```bash
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/
