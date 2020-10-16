@@ -28,7 +28,7 @@ echo "export ROS_WORKSPACE=/home/pi/catkin_ws" >> ~/.bashrc
 
 Finally, source the .bashrc file with the next command.
 ```bash
-source .bashrc
+source ~/.bashrc
 ```
 
 ## Clone repository and compile
