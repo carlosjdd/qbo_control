@@ -6,9 +6,11 @@ With this ROS package it will be posible to control the movement of the head mot
 
 ## Install ROS
 
-To control Qbo with ROS, the first step needed is installing ROS in the microSD of Qbo's Raspberry. To do that, you can follow the steps given to install ROS in its wiki. In my case, I installed ROS Melodic in Raspbian following this instructions:
+To control Qbo with ROS, the first step needed is installing ROS in the microSD of Qbo's Raspberry. To do that, you can follow the steps given to install ROS in its wiki. In my case, I installed ROS Kinetic in Raspbian following this instructions: 
 
-http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Melodic%20on%20the%20Raspberry%20Pi
+http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi
+
+I also tried to install ROS Melodic, but although it worked, I had some odd errors when searching packages. When I installed ROS Kinetic everything worked. I don't know if the problem is the version of ROS, or different. But just in case, I wanted to inform.
 
 After that, I created a new workspace, added the sources to .bashrc and also exported my ROS_WORKSPACE.
 ```bash
