@@ -219,9 +219,9 @@ class Controller:
             if len(rxBuffer) >= 5:
                 break
             else:
-                print "NACK ",rxBuffer
+                print ("NACK ",rxBuffer)
         if len(rxBuffer) < 5:
-            print" Error reading response.!"
+            print(" Error reading response.!")
         rdParam = self.ProcessRxData(rxBuffer)
         return rdParam
         
@@ -281,7 +281,6 @@ class Controller:
 
     def SetAngleRelative(self, Axis, Angle):
         cmd_buffer = ([ Axis, Angle & 0xff ,  (Angle >>8) & 0xff])
-	print "SetAnlgeRelative: (" + str(Axis) + "," + str(Angle) + ")"
         return self.SendCmdQBO(Command(self.SET_SERVO_ANGLE_REL, len(cmd_buffer), cmd_buffer))
 
     # Mounts protocol data to set QBO nose state color
@@ -297,7 +296,6 @@ class Controller:
     
     def SetPid(self, Axis, pid_p, pid_i, pid_d):
         cmd_buffer = ([Axis, pid_p, pid_i, pid_d])
-	print "SetPid " + str(cmd_buffer)
         return self.SendCmdQBO(Command(self.SET_SERVO_PID, len(cmd_buffer), cmd_buffer)) 
     
 
