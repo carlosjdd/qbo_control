@@ -64,6 +64,7 @@ Other option to run all the scripts is simply launching the qbo_control launcher
 roslaunch qbo_control qbo_control.launch
 ```
 
+### If you have errors
 However, you may have the error when trying to locate any package (as I had when I installed ROS Melodic). Because of that, you will not be able to use the rosrun or the roslaunch functions. In that case, you can run the scripts using python, and everything should work alright. To do that, yo can use the next commands:
 
 ```bash
