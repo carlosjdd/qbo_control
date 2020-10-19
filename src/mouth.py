@@ -74,7 +74,7 @@ class mouth_controler():
         """
         while not rospy.is_shutdown():
             #functions to repeat until the node is closed
-            pass
+            rospy.spin()
 
     def stopping_node(self):
         """ROS closing node
