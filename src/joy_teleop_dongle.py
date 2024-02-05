@@ -9,8 +9,6 @@ import math
 # import the necessary msgs. Example with msg type String_Int_Arrays:
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Joy
-from std_msgs.msg import Bool
-from std_msgs.msg import Float32MultiArray
  
 class joy_teleop():
     """ Class class_name.
@@ -44,8 +42,6 @@ class joy_teleop():
         self.increment=0.05
 
         self.define_joy()
-
-#        self.bocina = "afilador.mp3"
 
         print("[INFO] Node started: " + rospy.get_name())
 
