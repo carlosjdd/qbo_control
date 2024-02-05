@@ -9,11 +9,8 @@ import math
 # import the necessary msgs. Example with msg type String_Int_Arrays:
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Joy
-from std_msgs.msg import Empty
 from std_msgs.msg import Bool
-from std_msgs.msg import UInt8
 from std_msgs.msg import Float32MultiArray
-from std_msgs.msg import UInt8MultiArray
  
 class joy_teleop():
     """ Class class_name.
@@ -39,31 +36,12 @@ class joy_teleop():
         self.vel_msg.angular.y = 0.0
         self.vel_msg.angular.z = 0.0
 
-        #Define object as go_to_goal msg type and initialize as true
-        self.go_to_goal_msg = Bool()
-        self.go_to_goal_msg.data = True
-
-        #Define object as paint msg type
-        self.paint_msg = UInt8MultiArray()
-        self.paint_msg.data = [0,0]
-
-        #Define the object with the reajet parameters
-        self.rj_param_msg = Float32MultiArray()
-        self.rj_param_msg.data=[200,20]
-
-        self.rj_freq_min = 0.1
-        self.rj_freq_max = 1000
-
-        self.paint = False
-
         #Define variables
         self.max_linear_vel = 0.7
         self.max_angular_vel = 0.4
         self.limit_linear_vel = 2.0
         self.limit_angular_vel = 2.0
         self.increment=0.05
-
-        self.stop_robot_msg = False
 
         self.define_joy()
 
