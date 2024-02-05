@@ -65,9 +65,6 @@ class joy_teleop():
 
         self.stop_robot_msg = False
 
-        self.teleop_enabled = rospy.get_param("~teleop_enabled")                                # Get the boolean that indicates if teleop is enabled or not
-        self.teleop_status_pub.publish(self.teleop_enabled)
-
         self.define_joy()
 
 #        self.bocina = "afilador.mp3"
@@ -170,54 +167,6 @@ class joy_teleop():
                 self.vel_msg.angular.z = - self.max_angular_vel
             else:
                 self.vel_msg.angular.z = 0
-
-            #Publish msg
-            self.vel_pub.publish(self.vel_msg)
-
-            #If select pressed, reset alarms
-            if data.buttons[self.bt_select]==1:
-                self.alarm_pub.publish()
-
-            #If start pressed, send True/False alternatively to go_to_goal
-            if data.buttons[self.bt_start]==1:
-                self.teleop_enabled = False
-                self.teleop_status_pub.publish(self.teleop_enabled)
-
-            #If PS button is pressed, stop robot
-            if data.buttons[self.bt_r3]==1:
-                self.stop_robot_msg = not self.stop_robot_msg
-                self.stop_robot_pub.publish(self.stop_robot_msg)                                # Publish to stop the motion of the robot
-
-            #Buttons to control paint
-            if data.buttons[self.bt_triangle]==1:
-                #Triangle starts and stops paint
-                self.paint = not self.paint
-                self.rj_paint_pub.publish(self.paint)
-
-            if data.buttons[self.bt_x]==1:
-                #X prints a single point
-                self.paint_msg.data[0] = 1
-                self.paint_msg.data[1] = 0
-                self.paint_pub.publish(self.paint_msg)
-
-            if data.buttons[self.bt_square]==1:
-                #Square decreases the paint frequency
-                self.rj_param_msg.data[0] *= 0.9
-                if self.rj_param_msg.data[0] < self.rj_freq_min:
-                    self.rj_param_msg.data[0] = self.rj_freq_min
-                self.rj_param_pub.publish(self.rj_param_msg)
-
-            if data.buttons[self.bt_circle]==1:
-                #Circle increases the paint frequency
-                self.rj_param_msg.data[0] *= 1.1
-                if self.rj_param_msg.data[0] > self.rj_freq_max:
-                    self.rj_param_msg.data[0] = self.rj_freq_max
-                self.rj_param_pub.publish(self.rj_param_msg)
-
-
-        elif data.buttons[self.bt_start]==1:
-            self.teleop_enabled = True
-            self.teleop_status_pub.publish(self.teleop_enabled)
 
 
 if __name__=='__main__':
